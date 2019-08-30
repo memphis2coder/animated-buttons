@@ -21,7 +21,7 @@
   transform: translateY(4px);
 }
 /* Arrow Button */
-.button {
+.button-arrow {
   border-radius: 4px;
   background-color: #f4511e;
   border: none;
@@ -35,14 +35,14 @@
   margin: 5px;
 }
 
-.button span {
+.button-arrow span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.button span:after {
+.button-arrow span:after {
   content: "\00bb";
   position: absolute;
   opacity: 0;
@@ -51,11 +51,48 @@
   transition: 0.5s;
 }
 
-.button:hover span {
+.button-arrow:hover span {
   padding-right: 25px;
 }
 
-.button:hover span:after {
+.button-arrow:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+/* Ripper Effect */
+.button-rip {
+  position: relative;
+  background-color: #4caf50;
+  border: none;
+  font-size: 28px;
+  color: #ffffff;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button-rip:after {
+  content: "";
+  background: #90ee90;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.button-rip:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
 }
